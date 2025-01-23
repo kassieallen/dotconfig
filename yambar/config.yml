@@ -1,0 +1,156 @@
+jbm: &jbm JetBrainsMono Nerd Font:size=10
+icon: &icon JetBrainsMono Nerd Font:size=14
+bg: &bg {stack: [{background: {color: 2a2a2df0}}, {underline: {size: 2, color: 757581ff}}]}
+
+bar:
+  height: 20
+  location: top
+  font: *jbm
+  spacing: 2
+  margin: 0
+  layer: bottom
+  foreground: c9c7cdff
+  background: 131314f0
+
+  left:
+    - label:
+        content:
+          string:
+            on-click: sh -c "fuzzel"
+            text: 
+            left-margin: 4
+            right-margin: 8
+            font: *icon
+            foreground: 478060ff
+    - river:
+        anchors:
+          - base: &river_base
+              left-margin: 10
+              right-margin: 10
+              default: {string: {text: "{id}", font: *jbm}}
+              conditions:
+                id == 16: {string: {text: "󱓧", font: *jbm}}
+        content:
+          map:
+            on-click:
+              left: sh -c "riverctl set-focused-tags $((1 << ({id} - 1)))"
+              middle: sh -c "riverctl toggle-view-tags $((1 << ({id} - 1)))"
+              right: sh -c "riverctl toggle-focused-tags $((1 << ({id} - 1)))"
+            conditions:
+              state == urgent:
+                map:
+                  <<: *river_base
+                  deco: {background: {color: ea83a5ff}}
+              state == focused:
+                map:
+                  <<: *river_base
+                  deco: *bg
+              state == visible && ~occupied:
+                map:
+                  <<: *river_base
+              state == visible && occupied:
+                map: 
+                  <<: *river_base
+                  deco: *bg
+              state == unfocused:
+                map:
+                  <<: *river_base
+              state == invisible && ~occupied: {empty: {}}
+              state == invisible && occupied:
+                map:
+                  <<: *river_base
+                  deco: {underline: {size: 2, color: 2a2a2dff}}
+    - foreign-toplevel:
+        content:
+          map:
+            conditions:
+              ~activated: {empty: {}}
+              activated:
+                - string: {text: "{title}", max: 40, foreground: aca1cfff}
+  center:
+    - script:
+        path: "~/.config/scripts/musicPlayer.sh"
+        content: {string: {text: "{SONG}", foreground: 90b99fff}}
+  right:
+    - network:
+        poll-interval: 1000
+        content:
+          map:
+            default: {empty: {}}
+            on-click:
+              left: sh -c "foot --app-id=float -e nmtui"
+            conditions:
+              name == wlo1:
+                map:
+                  default: {string: {text: "󰖩 ", font: *jbm, foreground: ffffff66, right-margin: 10}}
+                  conditions:
+                    state == down: {string: {text: " ", font: *jbm, foreground: ff0000ff, right-margin: 10}}
+                    state == up:
+                      map:
+                        default:
+                          - string: {text: "󰖩", font: *jbm}
+                          - string: {text: " {dl-speed:mb}/{ul-speed:mb} Mb/s", right-margin: 10}
+                        conditions:
+                          ipv4 == "":
+                            - string: {text: "󰖩 ", font: *jbm, foreground: ffffff66}
+                            - string: {text: " {dl-speed:mb}/{ul-speed:mb} Mb/s", foreground: ffffff66, right-margin: 10}
+    - battery:
+        name: BAT0
+        poll-interval: 30000
+        anchors:
+          discharging: &discharging
+            list:
+              items:
+                - ramp:
+                    tag: capacity
+                    items:
+                      - string: {text:  , foreground: ff0000ff, font: *jbm}
+                      - string: {text:  , foreground: ffa600ff, font: *jbm}
+                      - string: {text:  , font: *jbm}
+                      - string: {text:  , font: *jbm}
+                      - string: {text:  , font: *jbm}
+                      - string: {text:  , font: *jbm}
+                      - string: {text:  , font: *jbm}
+                      - string: {text:  , font: *jbm}
+                      - string: {text:  , font: *jbm}
+                      - string: {text:  , foreground: 00ff00ff, font: *jbm}
+                - string: {text: "{capacity}%", left-margin: 6, right-margin: 10}
+        content:
+          map:
+            conditions:
+              state == unknown:
+                <<: *discharging
+              state == discharging:
+                <<: *discharging
+              state == charging:
+                - string: {text: , foreground: 00ff00ff, font: *jbm}
+                - string: {text: "{capacity}%", left-margin: 6, right-margin: 10}
+              state == full:
+                - string: {text:  , foreground: 00ff00ff, font: *jbm}
+                - string: {text: "{capacity}% full", left-margin: 6, right-margin: 10}
+              state == "not charging":
+                - ramp:
+                    tag: capacity
+                    items:
+                      - string: {text:  , foreground: ff0000ff, font: *jbm}
+                      - string: {text:  , foreground: ffa600ff, font: *jbm}
+                      - string: {text:  , foreground: 00ff00ff, font: *jbm}
+                      - string: {text:  , foreground: 00ff00ff, font: *jbm}
+                      - string: {text:  , foreground: 00ff00ff, font: *jbm}
+                      - string: {text:  , foreground: 00ff00ff, font: *jbm}
+                      - string: {text:  , foreground: 00ff00ff, font: *jbm}
+                      - string: {text:  , foreground: 00ff00ff, font: *jbm}
+                      - string: {text:  , foreground: 00ff00ff, font: *jbm}
+                      - string: {text:  , foreground: 00ff00ff, font: *jbm}
+                - string: {text: "{capacity}%", left-margin: 6, right-margin: 10}
+    - clock:
+        time-format: "%I:%M %p"
+        content:
+          - string: {text: "{date} {time}", right-margin: 6}
+    - label:
+        content:
+          string:
+            on-click: sh -c "loginctl poweroff"
+            text:  
+            right-margin: 10
+            font: *jbm

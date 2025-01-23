@@ -1,0 +1,113 @@
+#!/usr/bin/env bash
+
+## Dependencies
+# - brightnessctl
+# - foot
+# - fuzzel
+# - grim
+# - libnotify
+# - mako
+# - pamixer
+# - playerctl
+# - slurp
+# - swww
+# - wl-clipboard
+# - yambar
+# - yazi
+# - zenity
+
+## Initialisation
+pkill mako
+pkill 'playerctld daemon'
+pkill swww-daemon
+pkill yambar
+
+wallpaper="~/Pictures/walls/asia.jpg"
+riverctl spawn 'mako'
+riverctl spawn 'playerctld daemon'
+riverctl spawn 'swww-daemon -f xrgb'
+riverctl spawn 'swww img ${wallpaper} --transition-type none'
+riverctl spawn 'yambar'
+
+touchpad="pointer-1267-12541-ELAN0712:00_04F3:30FD_Touchpad"
+
+## Layout Generator
+riverctl default-layout rivertile
+rivertile -view-padding 4 -outer-padding 4 -main-ratio 0.5 &
+
+## Keybinds
+# general
+riverctl map normal Control+Alt Delete exit
+riverctl map normal None Print spawn 'grim -l 0 -g "$(slurp)" - | wl-copy --type image/png'
+riverctl map normal Super Return spawn 'foot'
+riverctl map normal Super Q close
+riverctl map normal Super E spawn 'foot -e yazi'
+riverctl map normal Super F toggle-fullscreen
+riverctl map normal Super R spawn '~/.config/river/init'
+riverctl map normal Super T toggle-float
+riverctl map normal Super Space spawn 'fuzzel'
+
+# windows and workspaces
+riverctl map normal Super K focus-view next
+riverctl map normal Super J focus-view previous
+riverctl map normal Super+Shift K swap next
+riverctl map normal Super+Shift J swap previous
+riverctl map normal Super H send-layout-cmd rivertile 'main-ratio -0.05'
+riverctl map normal Super L send-layout-cmd rivertile 'main-ratio +0.05'
+riverctl map normal Super Up send-layout-cmd rivertile 'main-location top'
+riverctl map normal Super Down send-layout-cmd rivertile 'main-location bottom'
+riverctl map normal Super Left send-layout-cmd rivertile 'main-location left'
+riverctl map normal Super Right send-layout-cmd rivertile 'main-location right'
+
+for i in $(seq 1 9)
+do
+  tags=$((1 << ($i -1)))
+  riverctl map normal Super $i set-focused-tags $tags
+  riverctl map normal Super+Shift $i set-view-tags $tags
+  riverctl map normal Super+Control $i toggle-focused-tags $tags
+  riverctl map normal Super+Shift+Control $i toggle-view-tags $tags
+done
+
+all_tags=$(((1 << 16) - 1))
+riverctl map normal Super 0 set-focused-tags $all_tags
+riverctl map normal Super+Shift 0 set-view-tags $all_tags
+
+# fancy buttons
+for mode in normal locked
+do
+  riverctl map $mode None XF86AudioRaiseVolume spawn 'pamixer -i 5'
+  riverctl map $mode None XF86AudioLowerVolume spawn 'pamixer -d 5'
+  riverctl map $mode None XF86AudioMute spawn 'pamixer --toggle-mute'
+  
+  riverctl map $mode None XF86AudioMedia spawn 'playerctl play-pause'
+  riverctl map $mode None XF86AudioPlay spawn 'playerctl play-pause'
+  riverctl map $mode None XF86AudioNext spawn 'playerctl next'
+  riverctl map $mode None XF86AudioPrev spawn 'playerctl previous'
+
+  riverctl map $mode None XF86MonBrightnessUp spawn 'brightnessctl set +5%'
+  riverctl map $mode None XF86MonBrightnessDown spawn 'brightnessctl set 5%-'
+done
+
+riverctl map-pointer normal Super BTN_LEFT move-view
+riverctl map-pointer normal Super BTN_RIGHT resize-view
+
+riverctl input $touchpad events enabled
+riverctl input $touchpad accel-profile flat
+riverctl input $touchpad pointer-accel 0
+riverctl input $touchpad clickfinger
+riverctl input $touchpad natural-scroll disabled
+riverctl input $touchpad tap enabled
+riverctl input $touchpad scroll-method two-finger
+
+## Look and Feel
+riverctl background-color 0x000000
+riverctl border-color-focused 0x757581
+riverctl border-color-unfocused 0x2A2A2D
+riverctl focus-follows-cursor always
+riverctl set-cursor-warp on-focus-change
+riverctl set-repeat 50 300
+riverctl rule-add -app-id 'float' float
+riverctl rule-add ssd
+
+## Issue Patching
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river

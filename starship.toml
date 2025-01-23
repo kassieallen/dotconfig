@@ -1,0 +1,85 @@
+format = """
+[╭╴](#EA83A5)\
+$os\
+$username\
+[](bg:#F5A191 fg:#EA83A5)\
+$directory\
+[](fg:#F5A191 bg:#F0C5A9)\
+$git_branch\
+$git_status\
+[](fg:#F0C5A9 bg:#9DC6AC)\
+$c\
+$java\
+$julia\
+$nodejs\
+$rust\
+[](fg:#9DC6AC bg:#89dceb)\
+$docker_context\
+[](fg:#89dceb bg:#89b4fa)\
+$time\
+[](fg:#89b4fa)
+[╰─╴](#EA83A5)\
+"""
+
+[os]
+style = "bg:#EA83A5"
+disabled = true # Disabled by default
+
+[username]
+show_always = true
+style_user = "bg:#EA83A5 fg:#131314"
+style_root = "bg:#EA83A5 fg:#131314"
+format = '[$user ]($style)'
+disabled = false
+
+[directory]
+style = "bg:#F5A191 fg:#131314"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[c]
+symbol = " "
+style = "bg:#9DC6AC fg:#131314"
+format = "[ $symbol ($version) ]($style)"
+  
+[docker_context]
+symbol = " "
+style = "bg:#89dceb fg:#131314"
+format = "[ $symbol $context ]($style)"
+
+[git_branch]
+symbol = ""
+style = "bg:#F0C5A9 fg:#131314"
+format = "[ $symbol $branch ]($style)"
+
+[git_status]
+style = "bg:#F0C5A9 fg:#131314"
+format = "[$all_status$ahead_behind ]($style)"
+
+[java]
+symbol = " "
+style = "bg:#9DC6AC fg:#131314"
+format = "[ $symbol ($version) ]($style)"
+
+[julia]
+symbol = " "
+style = "bg:#9DC6AC fg:#131314"
+format = "[ $symbol ($version) ]($style)"
+
+[nodejs]
+symbol = ""
+style = "bg:#9DC6AC fg:#131314"
+format = "[ $symbol ($version) ]($style)"
+
+[rust]
+symbol = ""
+style = "bg:#9DC6AC fg:#131314"
+format = "[ $symbol ($version) ]($style)"
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#89b4fa fg:#131314"
+format = "[ ♥ $time ]($style)"
+
