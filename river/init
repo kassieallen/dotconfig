@@ -22,13 +22,14 @@ pkill 'playerctld daemon'
 pkill swww-daemon
 pkill yambar
 
-wallpaper="~/Pictures/walls/asia.jpg"
 riverctl spawn 'mako'
 riverctl spawn 'playerctld daemon'
 riverctl spawn 'swww-daemon -f xrgb'
 riverctl spawn 'swww img ${wallpaper} --transition-type none'
 riverctl spawn 'yambar'
 
+## Variables
+wallpaper="~/Pictures/walls/asia.jpg"
 touchpad="pointer-1267-12541-ELAN0712:00_04F3:30FD_Touchpad"
 
 ## Layout Generator
