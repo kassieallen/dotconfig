@@ -4,6 +4,8 @@ Hello and welcome to the home of my personal system configuration that I use dai
 ## About The Setup
 My current daily-driver/EDC is an HP laptop (Model: 15-dy1074nr) running `void-linux-x86_64-musl`, built from a minimal install (as god intended). The end result is a sleek, minimal desktop in [river](https://codeberg.org/river/river), the dynamic tiling wayland compositor written in zig.
 
+![desktop](pics/desktop.png)
+
 ## Programs/Dependencies
 There are quite a few of packages that are dependencies of dependencies, but the most pivotal are:
 - [brightnessctl](https://github.com/Hummer12007/brightnessctl)
@@ -25,3 +27,5 @@ There are quite a few of packages that are dependencies of dependencies, but the
 
 ## Neovim
 I've used [Neovim](https://github.com/neovim/neovim) for a few years now, and although the program on it's own is superb, its strong suit is in it's plugins. There are countless Neovim configurations online; you can find mine in the `/nvim/` directory of this repo.
+
+![nvim](/pics/neovim.png)
