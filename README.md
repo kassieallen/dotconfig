@@ -26,6 +26,6 @@ There are quite a few of packages that are dependencies of dependencies, but the
 - [yazi](https://github.com/sxyazi/yazi)
 
 ## Neovim
-I've used [Neovim](https://github.com/neovim/neovim) for a few years now, and although the program on it's own is superb, its strong suit is in it's plugins. There are countless Neovim configurations online; you can find mine in the `/nvim/` directory of this repo.
+I've used [Neovim](https://github.com/neovim/neovim) for a few years now, and although the program on it's own is superb, its strong suit is in it's plugins. There are countless Neovim configurations online; you can find mine in the `nvim/` directory of this repo.
 
 ![nvim](/pics/neovim.png)
