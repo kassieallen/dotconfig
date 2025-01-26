@@ -72,6 +72,34 @@ bar:
         path: "~/.config/scripts/musicPlayer.sh"
         content: {string: {text: "{SONG}", foreground: 90b99fff}}
   right:
+    - pipewire:
+        anchors:
+          volume: &volume
+            conditions:
+              muted: {string: {text: "{cubic_volume}%", foreground: ea83a5ff}}
+              ~muted: {string: {text: "{cubic_volume}%"}}
+        content:
+          list:
+            items:
+              - map:
+                  on-click:
+                    wheel-up: sh -c "pamixer -i 1"
+                    wheel-down: sh -c "pamixer -d 1"
+                  conditions:
+                    type == "sink":
+                      map:
+                        conditions:
+                          icon == "audio-headset-bluetooth":
+                            string: {text: "󰋋 "}
+                        default:
+                          - ramp:
+                              tag: linear_volume
+                              items:
+                                - string: {text: " "}
+                    type == "source":
+                      - string: {text: "", left-margin: 8}
+              - map:
+                  <<: *volume
     - network:
         poll-interval: 1000
         content:
@@ -82,18 +110,18 @@ bar:
             conditions:
               name == wlo1:
                 map:
-                  default: {string: {text: "󰖩 ", font: *jbm, foreground: ffffff66, right-margin: 10}}
+                  default: {string: {text: " 󰖩 ", font: *jbm, foreground: ffffff66, right-margin: 8}}
                   conditions:
-                    state == down: {string: {text: " ", font: *jbm, foreground: ff0000ff, right-margin: 10}}
+                    state == down: {string: {text: " ", font: *jbm, foreground: ff0000ff, right-margin: 8}}
                     state == up:
                       map:
                         default:
-                          - string: {text: "󰖩", font: *jbm}
-                          - string: {text: " {dl-speed:mb}/{ul-speed:mb} Mb/s", right-margin: 10}
+                          - string: {text: " 󰖩", font: *jbm}
+                          - string: {text: " {dl-speed:mb}/{ul-speed:mb} Mb/s", right-margin: 8}
                         conditions:
                           ipv4 == "":
-                            - string: {text: "󰖩 ", font: *jbm, foreground: ffffff66}
-                            - string: {text: " {dl-speed:mb}/{ul-speed:mb} Mb/s", foreground: ffffff66, right-margin: 10}
+                            - string: {text: " 󰖩 ", font: *jbm, foreground: ffffff66}
+                            - string: {text: " {dl-speed:mb}/{ul-speed:mb} Mb/s", foreground: ffffff66, right-margin: 8}
     - battery:
         name: BAT0
         poll-interval: 30000
@@ -114,7 +142,7 @@ bar:
                       - string: {text:  , font: *jbm}
                       - string: {text:  , font: *jbm}
                       - string: {text:  , foreground: 00ff00ff, font: *jbm}
-                - string: {text: "{capacity}%", left-margin: 6, right-margin: 10}
+                - string: {text: "{capacity}%", left-margin: 6, right-margin: 8}
         content:
           map:
             conditions:
@@ -124,10 +152,10 @@ bar:
                 <<: *discharging
               state == charging:
                 - string: {text: , foreground: 00ff00ff, font: *jbm}
-                - string: {text: "{capacity}%", left-margin: 6, right-margin: 10}
+                - string: {text: "{capacity}%", left-margin: 6, right-margin: 8}
               state == full:
                 - string: {text:  , foreground: 00ff00ff, font: *jbm}
-                - string: {text: "{capacity}% full", left-margin: 6, right-margin: 10}
+                - string: {text: "{capacity}% full", left-margin: 6, right-margin: 8}
               state == "not charging":
                 - ramp:
                     tag: capacity
@@ -142,7 +170,7 @@ bar:
                       - string: {text:  , foreground: 00ff00ff, font: *jbm}
                       - string: {text:  , foreground: 00ff00ff, font: *jbm}
                       - string: {text:  , foreground: 00ff00ff, font: *jbm}
-                - string: {text: "{capacity}%", left-margin: 6, right-margin: 10}
+                - string: {text: "{capacity}%", left-margin: 6, right-margin: 8}
     - clock:
         time-format: "%I:%M %p"
         content:
@@ -152,5 +180,5 @@ bar:
           string:
             on-click: sh -c "loginctl poweroff"
             text:  
-            right-margin: 10
+            right-margin: 8
             font: *jbm
