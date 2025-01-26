@@ -14,23 +14,22 @@
 # - wl-clipboard
 # - yambar
 # - yazi
-# - zenity
+
+## Variables
+wallpaper="~/Pictures/walls/asia.png"
+touchpad="pointer-1267-12541-ELAN0712:00_04F3:30FD_Touchpad"
 
 ## Initialisation
 pkill mako
-pkill 'playerctld daemon'
+pkill -f 'playerctld daemon'
 pkill swww-daemon
 pkill yambar
 
 riverctl spawn 'mako'
 riverctl spawn 'playerctld daemon'
 riverctl spawn 'swww-daemon -f xrgb'
-riverctl spawn 'swww img ${wallpaper} --transition-type none'
+riverctl spawn "swww img $wallpaper --transition-type none"
 riverctl spawn 'yambar'
-
-## Variables
-wallpaper="~/Pictures/walls/asia.jpg"
-touchpad="pointer-1267-12541-ELAN0712:00_04F3:30FD_Touchpad"
 
 ## Layout Generator
 riverctl default-layout rivertile
@@ -111,4 +110,4 @@ riverctl rule-add -app-id 'float' float
 riverctl rule-add ssd
 
 ## Issue Patching
-dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
+dbus-update-activation-environment --all # WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river

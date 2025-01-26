@@ -1,13 +1,31 @@
 [org/gtk/settings/file-chooser]
 window-position=(26, 23)
-window-size=(1124, 727)
+window-size=(1124, 717)
 date-format='regular'
 location-mode='path-bar'
 show-hidden=false
 show-size-column=true
 show-type-column=true
-sidebar-width=152
+sidebar-width=171
 sort-column='name'
 sort-directories-first=false
 sort-order='ascending'
 type-format='category'
+
+[org/gnome/desktop/interface]
+gtk-theme='Adwaita'
+icon-theme='Adwaita'
+cursor-theme='Graphite-dark-cursors'
+cursor-size=24
+font-name='Noto Sans CJK TC Light 10'
+font-hinting='slight'
+font-antialiasing='grayscale'
+font-rgba-order='rgb'
+text-scaling-factor=1.0
+toolbar-style='both-horiz'
+toolbar-icons-size='large'
+color-scheme='prefer-dark'
+
+[org/gnome/desktop/sound]
+event-sounds=true
+input-feedback-sounds=false

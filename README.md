@@ -2,7 +2,7 @@
 Hello and welcome to the home of my personal system configuration that I use daily!
 
 ## About The Setup
-My current daily-driver/EDC is an HP laptop (Model: 15-dy1074nr) running `void-linux-x86_64-musl`, built from a minimal install (as god intended). The end result is a sleek, minimal desktop in [river](https://codeberg.org/river/river), the dynamic tiling wayland compositor written in zig.
+My current daily-driver/EDC is an HP laptop (Model: 15-dy1074nr) running `void-linux-x86_64-glibc`, built from a minimal install (as god intended). The end result is a sleek, minimal desktop in [river](https://codeberg.org/river/river), the dynamic tiling wayland compositor written in zig.
 
 ![desktop](pics/desktop.png)
 
