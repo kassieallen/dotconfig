@@ -33,8 +33,8 @@ M.defaults = function()
     capabilities = M.capabilities,
     on_init = M.on_init,
   }
-  -- nixd
-  lspconfig.nixd.setup {
+  -- rust_analyzer
+  lspconfig.rust_analyzer.setup {
     on_attach = M.on_attach,
     capabilities = M.capabilities,
     on_init = M.on_init,
