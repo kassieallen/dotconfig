@@ -26,18 +26,15 @@ M.capabilities = vim.lsp.protocol.make_client_capabilities()
 
 M.defaults = function()
   local lspconfig = require('lspconfig')
+  -- add servers here:
+  local servers = { 'lua_ls', 'rust_analyzer' }
 
-  -- lua_ls
-  lspconfig.lua_ls.setup {
-    on_attach = M.on_attach,
-    capabilities = M.capabilities,
-    on_init = M.on_init,
-  }
-  -- rust_analyzer
-  lspconfig.rust_analyzer.setup {
-    on_attach = M.on_attach,
-    capabilities = M.capabilities,
-    on_init = M.on_init,
-  }
+  for _, lsp in pairs(servers) do
+    lspconfig[lsp].setup {
+      on_attach = M.on_attach,
+      capabilities = M.capabilities,
+      on_init = M.on_init,
+    }
+  end
 end
 return M
