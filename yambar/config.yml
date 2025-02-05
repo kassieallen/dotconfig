@@ -121,56 +121,7 @@ bar:
                         conditions:
                           ipv4 == "":
                             - string: {text: " 󰖩 ", font: *jbm, foreground: ffffff66}
-                            - string: {text: " {dl-speed:mb}/{ul-speed:mb} Mb/s", foreground: ffffff66, right-margin: 8}
-    - battery:
-        name: BAT0
-        poll-interval: 30000
-        anchors:
-          discharging: &discharging
-            list:
-              items:
-                - ramp:
-                    tag: capacity
-                    items:
-                      - string: {text:  , foreground: ff0000ff, font: *jbm}
-                      - string: {text:  , foreground: ffa600ff, font: *jbm}
-                      - string: {text:  , font: *jbm}
-                      - string: {text:  , font: *jbm}
-                      - string: {text:  , font: *jbm}
-                      - string: {text:  , font: *jbm}
-                      - string: {text:  , font: *jbm}
-                      - string: {text:  , font: *jbm}
-                      - string: {text:  , font: *jbm}
-                      - string: {text:  , foreground: 00ff00ff, font: *jbm}
-                - string: {text: "{capacity}%", left-margin: 6, right-margin: 8}
-        content:
-          map:
-            conditions:
-              state == unknown:
-                <<: *discharging
-              state == discharging:
-                <<: *discharging
-              state == charging:
-                - string: {text: , foreground: 00ff00ff, font: *jbm}
-                - string: {text: "{capacity}%", left-margin: 6, right-margin: 8}
-              state == full:
-                - string: {text:  , foreground: 00ff00ff, font: *jbm}
-                - string: {text: "{capacity}% full", left-margin: 6, right-margin: 8}
-              state == "not charging":
-                - ramp:
-                    tag: capacity
-                    items:
-                      - string: {text:  , foreground: ff0000ff, font: *jbm}
-                      - string: {text:  , foreground: ffa600ff, font: *jbm}
-                      - string: {text:  , foreground: 00ff00ff, font: *jbm}
-                      - string: {text:  , foreground: 00ff00ff, font: *jbm}
-                      - string: {text:  , foreground: 00ff00ff, font: *jbm}
-                      - string: {text:  , foreground: 00ff00ff, font: *jbm}
-                      - string: {text:  , foreground: 00ff00ff, font: *jbm}
-                      - string: {text:  , foreground: 00ff00ff, font: *jbm}
-                      - string: {text:  , foreground: 00ff00ff, font: *jbm}
-                      - string: {text:  , foreground: 00ff00ff, font: *jbm}
-                - string: {text: "{capacity}%", left-margin: 6, right-margin: 8}
+                            - string: {text: " {dl-speed:mb}/{ul-speed:mb} Mb/s", foreground: ffffff66, right-margin: 8} 
     - clock:
         time-format: "%I:%M %p"
         content:

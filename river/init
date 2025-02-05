@@ -10,32 +10,31 @@
 # - pamixer
 # - playerctl
 # - slurp
-# - swww
+# - wbg
 # - wl-clipboard
 # - yambar
 # - yazi
 
 ## Variables
-wallpaper="~/Pictures/walls/asia.png"
+wallpaper="~/Pictures/walls/foggy_forest.jpg"
 touchpad="pointer-1267-12541-ELAN0712:00_04F3:30FD_Touchpad"
 
 ## Initialisation
 pkill mako
 pkill pipewire
 pkill -f 'playerctld daemon'
-pkill swww-daemon
+pkill wbg
 pkill yambar
 
 riverctl spawn 'mako'
 riverctl spawn 'pipewire'
 riverctl spawn 'playerctld daemon'
-riverctl spawn 'swww-daemon -f xrgb'
-riverctl spawn "swww img $wallpaper --transition-type none"
+riverctl spawn "wbg $wallpaper"
 riverctl spawn 'yambar'
 
 ## Layout Generator
 riverctl default-layout rivertile
-rivertile -view-padding 4 -outer-padding 4 -main-ratio 0.5 &
+rivertile -view-padding 2 -outer-padding 2 -main-ratio 0.5 &
 
 ## Keybinds
 # general
@@ -105,6 +104,7 @@ riverctl input $touchpad scroll-method two-finger
 riverctl background-color 0x000000
 riverctl border-color-focused 0x757581
 riverctl border-color-unfocused 0x2A2A2D
+riverctl border-width 1
 riverctl focus-follows-cursor always
 riverctl set-cursor-warp on-focus-change
 riverctl set-repeat 50 300
