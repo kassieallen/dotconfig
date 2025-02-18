@@ -1,6 +1,7 @@
 return {
   "jay-babu/mason-nvim-dap.nvim",
-  event = "VeryLazy",
+  cmd = { "Mason", "MasonInstall", "MasonUpdate" },
+  ft = { "cpp", "c" },
   dependencies = {
     "williamboman/mason.nvim",
     "mfussenegger/nvim-dap",

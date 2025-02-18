@@ -40,6 +40,7 @@ map("v", "<leader>/", "gc", { desc = "toggle comment", remap = true })
 -- nvim-dap
 map("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>", { desc = "add breakpoint at line" })
 map("n", "<leader>dc", "<cmd>DapContinue<CR>", { desc = "start or continue debugger" })
+map("n", "<leader>ds", "<cmd>DapStepOver<CR>", { desc = "step over execution" })
 
 -- telescope
 map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })

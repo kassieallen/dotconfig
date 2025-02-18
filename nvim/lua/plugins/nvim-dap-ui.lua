@@ -1,6 +1,6 @@
 return {
   "rcarriga/nvim-dap-ui",
-  event = "VeryLazy",
+  ft = { "cpp", "c" },
   dependencies = {
     "mfussenegger/nvim-dap",
     "nvim-neotest/nvim-nio",
