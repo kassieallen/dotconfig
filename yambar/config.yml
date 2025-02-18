@@ -1,4 +1,4 @@
-jbm: &jbm JetBrainsMono Nerd Font:size=10
+jbm: &jbm JetBrainsMono Nerd Font:pixelsize=12
 icon: &icon JetBrainsMono Nerd Font:size=14
 bg: &bg {stack: [{background: {color: 2a2a2df0}}, {underline: {size: 2, color: 757581ff}}]}
 

@@ -1,0 +1,187 @@
+15:27:04.319: [Safe Mode] Unclean shutdown detected!
+15:27:05.872: [Safe Mode] User elected to launch normally.
+15:27:05.873: Using EGL/X11
+15:27:05.873: CPU Name: AMD Ryzen 5 3600 6-Core Processor
+15:27:05.873: CPU Speed: 2200.000MHz
+15:27:05.874: Physical Cores: 6, Logical Cores: 12
+15:27:05.874: Physical Memory: 15920MB Total, 13394MB Free
+15:27:05.874: Kernel Version: Linux 6.12.12_1
+15:27:05.874: Distribution: "Void" Unknown
+15:27:05.874: Session Type: wayland
+15:27:05.874: Window System: X11.0, Vendor: The X.Org Foundation, Version: 1.24.1
+15:27:05.875: Qt Version: 6.8.1 (runtime), 6.8.1 (compiled)
+15:27:05.875: Portable mode: false
+15:27:05.897: OBS 30.2.3 (linux)
+15:27:05.897: ---------------------------------
+15:27:05.897: ---------------------------------
+15:27:05.897: audio settings reset:
+15:27:05.897: 	samples per sec: 48000
+15:27:05.897: 	speakers:        2
+15:27:05.897: 	max buffering:   960 milliseconds
+15:27:05.897: 	buffering type:  dynamically increasing
+15:27:05.904: ---------------------------------
+15:27:05.904: Initializing OpenGL...
+15:27:06.069: Loading up OpenGL on adapter Mesa zink Vulkan 1.3(NVIDIA GeForce GTX 1070 (NVIDIA_PROPRIETARY))
+15:27:06.069: OpenGL loaded successfully, version 4.6 (Core Profile) Mesa 24.2.8, shading language 4.60
+15:27:06.101: ---------------------------------
+15:27:06.101: video settings reset:
+15:27:06.101: 	base resolution:   1920x1080
+15:27:06.101: 	output resolution: 1920x1080
+15:27:06.101: 	downscale filter:  Bicubic
+15:27:06.101: 	fps:               60/1
+15:27:06.101: 	format:            NV12
+15:27:06.101: 	YUV mode:          Rec. 709/Partial
+15:27:06.101: NV12 texture support enabled
+15:27:06.101: P010 texture support not available
+15:27:06.104: Audio monitoring device:
+15:27:06.104: 	name: Default
+15:27:06.104: 	id: default
+15:27:06.104: ---------------------------------
+15:27:06.113: Failed to load 'en-US' text for module: 'decklink-captions.so'
+15:27:06.126: Failed to load 'en-US' text for module: 'decklink-output-ui.so'
+15:27:06.135: A DeckLink iterator could not be created.  The DeckLink drivers may not be installed
+15:27:06.135: Failed to initialize module 'decklink.so'
+15:27:06.317: [pipewire] Available capture sources:
+15:27:06.318: [pipewire]     - Monitor source
+15:27:06.342: v4l2loopback not installed, virtual camera not registered
+15:27:06.363: NVENC supported
+15:27:06.363: VAAPI: Failed to initialize display in vaapi_device_h264_supported
+15:27:06.363: FFmpeg VAAPI H264 encoding not supported
+15:27:06.363: VAAPI: Failed to initialize display in vaapi_device_av1_supported
+15:27:06.363: FFmpeg VAAPI AV1 encoding not supported
+15:27:06.363: VAAPI: Failed to initialize display in vaapi_device_hevc_supported
+15:27:06.363: FFmpeg VAAPI HEVC encoding not supported
+15:27:06.449: [vlc-video]: VLC 3.0.21 Vetinari found, VLC video source enabled
+15:27:06.449: ---------------------------------
+15:27:06.449:   Loaded Modules:
+15:27:06.449:     vlc-video.so
+15:27:06.449:     text-freetype2.so
+15:27:06.449:     rtmp-services.so
+15:27:06.449:     obs-x264.so
+15:27:06.449:     obs-webrtc.so
+15:27:06.449:     obs-transitions.so
+15:27:06.449:     obs-outputs.so
+15:27:06.449:     obs-filters.so
+15:27:06.449:     obs-ffmpeg.so
+15:27:06.449:     linux-v4l2.so
+15:27:06.449:     linux-pulseaudio.so
+15:27:06.449:     linux-pipewire.so
+15:27:06.449:     linux-jack.so
+15:27:06.449:     linux-capture.so
+15:27:06.449:     linux-alsa.so
+15:27:06.449:     image-source.so
+15:27:06.449:     frontend-tools.so
+15:27:06.449:     decklink-output-ui.so
+15:27:06.449:     decklink-captions.so
+15:27:06.449: ---------------------------------
+15:27:06.449: ---------------------------------
+15:27:06.449: Available Encoders:
+15:27:06.449:   Video Encoders:
+15:27:06.449: 	- ffmpeg_svt_av1 (SVT-AV1)
+15:27:06.449: 	- ffmpeg_aom_av1 (AOM AV1)
+15:27:06.449: 	- ffmpeg_nvenc (NVIDIA NVENC H.264 (FFmpeg))
+15:27:06.449: 	- ffmpeg_hevc_nvenc (NVIDIA NVENC HEVC (FFmpeg))
+15:27:06.449: 	- obs_x264 (x264)
+15:27:06.449:   Audio Encoders:
+15:27:06.449: 	- ffmpeg_aac (FFmpeg AAC)
+15:27:06.449: 	- ffmpeg_opus (FFmpeg Opus)
+15:27:06.449: 	- ffmpeg_pcm_s16le (FFmpeg PCM (16-bit))
+15:27:06.449: 	- ffmpeg_pcm_s24le (FFmpeg PCM (24-bit))
+15:27:06.449: 	- ffmpeg_pcm_f32le (FFmpeg PCM (32-bit float))
+15:27:06.449: 	- ffmpeg_alac (FFmpeg ALAC (24-bit))
+15:27:06.449: 	- ffmpeg_flac (FFmpeg FLAC (16-bit))
+15:27:06.449: ==== Startup complete ===============================================
+15:27:06.474: All scene data cleared
+15:27:06.474: ------------------------------------------------
+15:27:06.478: pulse-input: Server name: 'PulseAudio (on PipeWire 1.2.7) 15.0.0'
+15:27:06.478: pulse-input: Audio format: s32le, 48000 Hz, 2 channels
+15:27:06.478: pulse-input: Started recording from 'alsa_output.pci-0000_2d_00.4.analog-stereo.monitor'
+15:27:06.478: [Loaded global audio device]: 'Desktop Audio'
+15:27:06.479: pulse-input: Server name: 'PulseAudio (on PipeWire 1.2.7) 15.0.0'
+15:27:06.479: pulse-input: Audio format: s32le, 48000 Hz, 2 channels
+15:27:06.479: pulse-input: Started recording from 'alsa_input.usb-Focusrite_Scarlett_Solo_USB_Y77EC1914C400F-00.analog-stereo'
+15:27:06.479: [Loaded global audio device]: 'Mic/Aux'
+15:27:06.481: Switched to scene 'Scene'
+15:27:06.481: ------------------------------------------------
+15:27:06.481: Loaded scenes:
+15:27:06.481: - scene 'Scene':
+15:27:06.481: ------------------------------------------------
+15:27:07.220: adding 21 milliseconds of audio buffering, total audio buffering is now 21 milliseconds (source: Desktop Audio)
+15:27:07.220: 
+15:27:12.079: PipeWire initialized
+15:27:12.083: User added source 'Screen Capture (PipeWire)' (pipewire-screen-capture-source) to scene 'Scene'
+15:27:12.105: [pipewire] Screencast session created
+15:27:13.096: [pipewire] Asking for monitor and window
+15:27:13.116: [pipewire] source selected, setting up screencast
+15:27:13.121: [pipewire] Server version: 1.2.7
+15:27:13.121: [pipewire] Library version: 1.2.7
+15:27:13.121: [pipewire] Header version: 1.2.6
+15:27:13.123: [pipewire] Created stream 0x5576fa98ecc0
+15:27:13.123: [pipewire] Stream 0x5576fa98ecc0 state: "connecting" (error: none)
+15:27:13.123: [pipewire] Playing stream 0x5576fa98ecc0
+15:27:13.123: [pipewire] Stream 0x5576fa98ecc0 state: "paused" (error: none)
+15:27:13.135: [pipewire] Negotiated format:
+15:27:13.135: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+15:27:13.135: [pipewire]     Modifier: 0x0
+15:27:13.135: [pipewire]     Size: 1920x1080
+15:27:13.135: [pipewire]     Framerate: 0/1
+15:27:13.135: [pipewire] Negotiated format:
+15:27:13.135: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+15:27:13.135: [pipewire]     Modifier: 0x3000000004fe010
+15:27:13.135: [pipewire]     Size: 1920x1080
+15:27:13.135: [pipewire]     Framerate: 0/1
+15:27:13.136: [pipewire] Stream 0x5576fa98ecc0 state: "streaming" (error: none)
+15:27:18.655: User Removed source 'Screen Capture (PipeWire)' (pipewire-screen-capture-source) from scene 'Scene'
+15:27:18.658: [pipewire] Stream 0x5576fa98ecc0 state: "paused" (error: none)
+15:27:18.669: [pipewire] Stream 0x5576fa98ecc0 state: "unconnected" (error: none)
+15:27:23.979: xshm-input: Geometry 1920x1080 @ 0,0
+15:27:23.988: User added source 'Display Capture (XSHM)' (xshm_input) to scene 'Scene'
+15:27:29.007: User Removed source 'Display Capture (XSHM)' (xshm_input) from scene 'Scene'
+15:27:34.447: PipeWire initialized
+15:27:34.450: User added source 'Screen Capture (PipeWire)' (pipewire-screen-capture-source) to scene 'Scene'
+15:27:34.469: [pipewire] Screencast session created
+15:27:35.827: [pipewire] Asking for monitor and window
+15:27:35.847: [pipewire] source selected, setting up screencast
+15:27:35.852: [pipewire] Server version: 1.2.7
+15:27:35.852: [pipewire] Library version: 1.2.7
+15:27:35.852: [pipewire] Header version: 1.2.6
+15:27:35.853: [pipewire] Created stream 0x5576f7985ef0
+15:27:35.853: [pipewire] Stream 0x5576f7985ef0 state: "connecting" (error: none)
+15:27:35.853: [pipewire] Playing stream 0x5576f7985ef0
+15:27:35.853: [pipewire] Stream 0x5576f7985ef0 state: "paused" (error: none)
+15:27:35.867: [pipewire] Negotiated format:
+15:27:35.867: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+15:27:35.867: [pipewire]     Modifier: 0x0
+15:27:35.867: [pipewire]     Size: 1920x1080
+15:27:35.867: [pipewire]     Framerate: 0/1
+15:27:35.867: [pipewire] Negotiated format:
+15:27:35.867: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+15:27:35.867: [pipewire]     Modifier: 0x3000000004fe010
+15:27:35.867: [pipewire]     Size: 1920x1080
+15:27:35.867: [pipewire]     Framerate: 0/1
+15:27:35.868: [pipewire] Stream 0x5576f7985ef0 state: "streaming" (error: none)
+15:27:37.137: [pipewire] Stream 0x5576f7985ef0 state: "paused" (error: none)
+15:27:37.137: [pipewire] Stream 0x5576f7985ef0 state: "unconnected" (error: none)
+15:27:37.139: PipeWire initialized
+15:27:37.141: [pipewire] Screencast session created
+15:27:38.505: [pipewire] Asking for monitor and window
+15:27:38.526: [pipewire] source selected, setting up screencast
+15:27:38.532: [pipewire] Server version: 1.2.7
+15:27:38.532: [pipewire] Library version: 1.2.7
+15:27:38.532: [pipewire] Header version: 1.2.6
+15:27:38.532: [pipewire] Created stream 0x5576f7985ef0
+15:27:38.532: [pipewire] Stream 0x5576f7985ef0 state: "connecting" (error: none)
+15:27:38.532: [pipewire] Playing stream 0x5576f7985ef0
+15:27:38.532: [pipewire] Stream 0x5576f7985ef0 state: "paused" (error: none)
+15:27:38.551: [pipewire] Negotiated format:
+15:27:38.552: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+15:27:38.552: [pipewire]     Modifier: 0x0
+15:27:38.552: [pipewire]     Size: 1920x1080
+15:27:38.552: [pipewire]     Framerate: 0/1
+15:27:38.552: [pipewire] Negotiated format:
+15:27:38.552: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+15:27:38.552: [pipewire]     Modifier: 0x3000000004fe010
+15:27:38.552: [pipewire]     Size: 1920x1080
+15:27:38.552: [pipewire]     Framerate: 0/1
+15:27:38.552: [pipewire] Stream 0x5576f7985ef0 state: "streaming" (error: none)
+15:27:47.088: The X11 connection broke (error 7). Did the X11 server die?

@@ -1,0 +1,13 @@
+[Default Applications]
+x-scheme-handler/everest=/home/kassie/.local/share/applications/Olympus.desktop
+image/jpeg=imv.desktop
+image/png=imv.desktop
+application/json=nvim.desktop
+application/x-zerosize=nvim.desktop
+
+[Added Associations]
+image/jpeg=imv.desktop;
+image/png=gimp.desktop;imv.desktop;
+inode/directory=mpv.desktop;nvim.desktop;vlc.desktop;
+application/json=foot.desktop;nvim.desktop;
+application/x-zerosize=nvim.desktop;

@@ -16,6 +16,7 @@ return {
       },
       tabline = {
         lualine_a = {'filename'},
+        lualine_b = {'buffers'},
         lualine_y = {'branch', {'diff', symbols = { added = ' ', modified = ' ', removed = ' ' },}},
         lualine_z = {'tabs'}
       }

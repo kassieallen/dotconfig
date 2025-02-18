@@ -22,12 +22,12 @@ M.on_init = function(client, _)
   end
 end
 
-M.capabilities = vim.lsp.protocol.make_client_capabilities()
+M.capabilities = require("cmp_nvim_lsp").default_capabilities() -- vim.lsp.protocol.make_client_capabilities()
 
 M.defaults = function()
   local lspconfig = require('lspconfig')
   -- add servers here:
-  local servers = { 'lua_ls', 'rust_analyzer' }
+  local servers = { 'lua_ls', 'rust_analyzer', 'clangd' }
 
   for _, lsp in pairs(servers) do
     lspconfig[lsp].setup {
